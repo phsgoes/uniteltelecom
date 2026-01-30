@@ -9,14 +9,6 @@ import { testimonials } from '~/data/testimonials'
 import { sliderItems } from '~/data/slider'
 import AppIcon from '~/components/shared/AppIcon.vue'
 
-const { app } = useRuntimeConfig()
-
-// Configurações da marca
-const brandColors: { bg: string, line: string } = {
-  bg: '#031422',
-  line: '#145F9C'
-}
-
 const features = {
   title: 'Soluções inteligentes em telecomunicações para empresas que não podem parar',
   description: 'A Unitel ajuda sua empresa a reduzir falhas na comunicação, evitar interrupções operacionais, ter controle e rastreabilidade no atendimento, atender exigências legais e institucionais, além de proteger a reputação da marca',
@@ -87,8 +79,8 @@ useHead({ title: 'Home' })
 
     <section class="w-full h-screen">
       <FuturisticBackground 
-        :bg-color="brandColors.bg"
-        :line-color="brandColors.line"
+        bg-color="#031422"
+        line-color="#145F9C"
         :bg-opacity="0.2"
       >
         <div class="flex flex-col items-center justify-center h-full px-4 text-center">
@@ -185,90 +177,3 @@ useHead({ title: 'Home' })
     </UPageSection>
   </NuxtLayout>
 </template>
-
-<!-- <UPageHero
-  title="Nuxt Starter Template"
-  description="A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours."
-  :links="[{
-    label: 'Get started',
-    to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
-    target: '_blank',
-    trailingIcon: 'lucide:arrow-right',
-    size: 'xl'
-  }, {
-    label: 'Use this template',
-    to: 'https://github.com/nuxt-ui-templates/starter',
-    target: '_blank',
-    icon: 'i-simple-icons-github',
-    size: 'xl',
-    color: 'neutral',
-    variant: 'subtle'
-  }]"
-/>
-
-<UPageSection
-  :title="features.title"
-  :description="features.description"
->
-  <UPageGrid>
-    <UPageCard
-      v-for="(item, index) in features.items"
-      :key="index"
-      v-bind="item"
-      spotlight
-    />
-  </UPageGrid>
-</UPageSection>
-
-<UPageSection
-  id="features"
-  title="Everything you need to build modern Nuxt apps"
-  description="Start with a solid foundation. This template includes all the essentials for building production-ready applications with Nuxt UI's powerful component system."
-  :features="[{
-    icon: 'lucide:rocket',
-    title: 'Production-ready from day one',
-    description: 'Pre-configured with TypeScript, ESLint, Tailwind CSS, and all the best practices. Focus on building features, not setting up tooling.'
-  }, {
-    icon: 'lucide:palette',
-    title: 'Beautiful by default',
-    description: 'Leveraging Nuxt UI\'s design system with automatic dark mode, consistent spacing, and polished components that look great out of the box.'
-  }, {
-    icon: 'lucide:zap',
-    title: 'Lightning fast',
-    description: 'Optimized for performance with SSR/SSG support, automatic code splitting, and edge-ready deployment. Your users will love the speed.'
-  }, {
-    icon: 'lucide:blocks',
-    title: '100+ components included',
-    description: 'Access Nuxt UI\'s comprehensive component library. From forms to navigation, everything is accessible, responsive, and customizable.'
-  }, {
-    icon: 'lucide:code-2',
-    title: 'Developer experience first',
-    description: 'Auto-imports, hot module replacement, and TypeScript support. Write less boilerplate and ship more features.'
-  }, {
-    icon: 'lucide:shield-check',
-    title: 'Built for scale',
-    description: 'Enterprise-ready architecture with proper error handling, SEO optimization, and security best practices built-in.'
-  }]"
-/>
-
-<UPageSection>
-  <UPageCTA
-    title="Ready to build your next Nuxt app?"
-    description="Join thousands of developers building with Nuxt and Nuxt UI. Get this template and start shipping today."
-    variant="subtle"
-    :links="[{
-      label: 'Start building',
-      to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
-      target: '_blank',
-      trailingIcon: 'lucide:arrow-right',
-      color: 'neutral'
-    }, {
-      label: 'View on GitHub',
-      to: 'https://github.com/nuxt-ui-templates/starter',
-      target: '_blank',
-      icon: 'i-simple-icons-github',
-      color: 'neutral',
-      variant: 'outline'
-    }]"
-  />
-</UPageSection> -->

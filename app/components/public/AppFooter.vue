@@ -39,11 +39,13 @@ const columns: FooterColumn<FooterItem>[] = [
     children: [
       {
         label: 'Instagram',
-        icon: 'lucide:instagram'
+        icon: 'lucide:instagram',
+        to: 'https://www.instagram.com/uniteltelecom_/'
       },
       {
         label: 'LinkedIn',
-        icon: 'lucide:linkedin'
+        icon: 'lucide:linkedin',
+        to: 'https://www.linkedin.com/company/uniteltelecomvca'
       },
       {
         label: 'X (Twitter)',
