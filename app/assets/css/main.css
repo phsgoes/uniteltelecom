@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/*
+Principal:        #145F9C | rgb(20, 95, 156)
+Apoio principal:  #0A3963 | rgb(10, 57, 99)
+Secundária:       #ED3237 | rgb(237, 50, 55)
+Apoio secundária: #630A0B | rgb(99, 10, 11)
+*/
+
+@theme static {
+  --font-sans: 'Poppins', sans-serif;
+  --font-handwritten: 'Yellowtail', sans-serif;
+
+  --color-stockholm-50: #eff4fe;
+  --color-stockholm-100: #dae6fe;
+  --color-stockholm-200: #b7d0fc;
+  --color-stockholm-300: #8bb8fb;
+  --color-stockholm-400: #5aa3fa;
+  --color-stockholm-500: #268ce7;
+  --color-stockholm-600: #1f77c6;
+  --color-stockholm-700: #1761a2;
+  --color-stockholm-800: #114d83;
+  --color-stockholm-900: #0a3963;
+  --color-stockholm-950: #04203c;
+}
