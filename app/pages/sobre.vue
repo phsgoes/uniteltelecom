@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import CounterStats from '~/components/public/CounterStats.vue'
+import AppIcon from '~/components/shared/AppIcon.vue'
 import ClientsMarquee from '~/components/shared/ClientsMarquee.vue'
 import { logosComercial, logosSaude } from '~/data/logos'
 import { testimonials } from '~/data/testimonials'
@@ -13,17 +14,17 @@ const aboutUs = {
     {
       title: 'Missão',
       description: 'Conectar empresas e instituições por meio de soluções de telecomunicações confiáveis, garantindo comunicação contínua e eficiente.',
-      icon: 'lucide:target'
+      icon: 'unitel:target'
     },
     {
       title: 'Visão',
       description: 'Ser reconhecida como referência em telecomunicações pela confiança, inovação e qualidade das soluções que entregamos.',
-      icon: 'lucide:eye'
+      icon: 'unitel:eye'
     },
     {
       title: 'Valores',
       description: 'Confiança nas relações e nas soluções, Compromisso com o cliente,	Inovação contínua, Responsabilidade e ética',
-      icon: 'lucide:award'
+      icon: 'unitel:award'
     }
   ]
 }
@@ -51,8 +52,8 @@ useHead({ title: 'Sobre' })
           >
             <template #title>
               <div class="mx-auto mb-4 flex items-center justify-center">
-                <UIcon
-                  :name="item.icon"
+                <AppIcon
+                  :icon="item.icon"
                   class="h-12 w-12 text-gray-600 dark:text-gray-400"
                 />
               </div>

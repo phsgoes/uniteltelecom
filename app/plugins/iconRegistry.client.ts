@@ -5,7 +5,10 @@ import { defineAsyncComponent } from 'vue'
 export default defineNuxtPlugin(() => {
   // Registra a biblioteca 'unitel' na inicialização
   registerIconLibrary('unitel', {
+    award: defineAsyncComponent(() => import('~/components/icons/UnitelAward.vue')),
+    comuniq: defineAsyncComponent(() => import('~/components/icons/UnitelComuniq.vue')),
+    eye: defineAsyncComponent(() => import('~/components/icons/UnitelEye.vue')),
     logo: defineAsyncComponent(() => import('~/components/icons/UnitelLogo.vue')),
-    comuniq: defineAsyncComponent(() => import('~/components/icons/UnitelComuniq.vue'))
+    target: defineAsyncComponent(() => import('~/components/icons/UnitelTarget.vue')),
   })
 })
