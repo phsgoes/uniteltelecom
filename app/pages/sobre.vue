@@ -13,17 +13,17 @@ const aboutUs = {
     {
       title: 'Missão',
       description: 'Conectar empresas e instituições por meio de soluções de telecomunicações confiáveis, garantindo comunicação contínua e eficiente.',
-      icon: 'fa7-solid:bullseye'
+      icon: 'lucide:target'
     },
     {
       title: 'Visão',
       description: 'Ser reconhecida como referência em telecomunicações pela confiança, inovação e qualidade das soluções que entregamos.',
-      icon: 'fa7-solid:eye'
+      icon: 'lucide:eye'
     },
     {
       title: 'Valores',
       description: 'Confiança nas relações e nas soluções, Compromisso com o cliente,	Inovação contínua, Responsabilidade e ética',
-      icon: 'fa7-solid:award'
+      icon: 'lucide:award'
     }
   ]
 }
