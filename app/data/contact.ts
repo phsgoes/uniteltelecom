@@ -57,13 +57,15 @@ const contacts: ContactItem[] = [
 const socials: SocialItem[] = [
   {
     name: 'Instagram',
-    icon: 'fa7-brands:instagram',
+    icon: 'lucide:instagram',
+    // icon: 'fa7-brands:instagram',
     href: 'https://www.instagram.com/uniteltelecom_/',
     customClasses: 'border-pink-500 text-pink-500 hover:bg-linear-to-r hover:from-pink-400 hover:to-yellow-400 hover:text-white'
   },
   {
     name: 'LinkedIn',
-    icon: 'fa7-brands:linkedin',
+    icon: 'lucide:linkedin',
+    // icon: 'fa7-brands:linkedin',
     href: 'https://www.linkedin.com/company/uniteltelecomvca',
     customClasses: 'border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white'
   },
