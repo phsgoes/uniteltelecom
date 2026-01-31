@@ -10,6 +10,10 @@ export default defineNuxtConfig({
     css: { devSourcemap: false }
   },
 
+  icon: {
+    serverBundle: false
+  },
+
   app: {
     baseURL,
     head: {
