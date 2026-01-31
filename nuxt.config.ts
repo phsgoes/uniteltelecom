@@ -1,4 +1,9 @@
 const baseURL = '/uniteltelecom/'
+const icons = {
+  dynamic: false,
+  collections: ['mdi', 'lucide', 'fa7-brands']
+}
+
 export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
@@ -10,8 +15,9 @@ export default defineNuxtConfig({
     css: { devSourcemap: false }
   },
 
-  icon: {
-    serverBundle: false
+  ui: {
+    // @ts-ignore
+    icons,
   },
 
   app: {
