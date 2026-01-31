@@ -1,4 +1,5 @@
 import type { ContactItem, SocialItem } from '@/types'
+import { baseURL } from './_'
 
 const phoneNumber: string = '557721013300'
 const message: string = 'Olá, estou entrando em contato através do site da Unitel.'
@@ -10,7 +11,7 @@ const contacts: ContactItem[] = [
     icon: 'mdi:phone',
     to: 'tel:+557721013300',
     image: {
-      path: '/uniteltelecom/images/telefone',
+      path: `${baseURL}images/telefone`,
       width: 363,
       height: 206
     },
@@ -22,7 +23,7 @@ const contacts: ContactItem[] = [
     icon: 'mdi:email-outline',
     to: 'mailto:atendimento@uniteltelecom.com.br',
     image: {
-      path: '/uniteltelecom/images/atendimento',
+      path: `${baseURL}images/atendimento`,
       width: 363,
       height: 203
     },
@@ -34,7 +35,7 @@ const contacts: ContactItem[] = [
     icon: 'fa7-brands:whatsapp',
     to: `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
     image: {
-      path: '/uniteltelecom/images/whatsapp',
+      path: `${baseURL}images/whatsapp`,
       width: 117,
       height: 130
     },
@@ -46,7 +47,7 @@ const contacts: ContactItem[] = [
     icon: 'mdi:email-outline',
     to: 'mailto:comercial@uniteltelecom.com.br',
     image: {
-      path: '/uniteltelecom/images/comercial',
+      path: `${baseURL}images/comercial`,
       width: 363,
       height: 170
     },
