@@ -28,22 +28,22 @@ const mobileItems = ref<MenuItem[]>([
   {
     label: 'Home',
     to: '/',
-    icon: 'lucide:home'
+    icon: 'fa7-solid:home'
   },
   {
     label: 'Sobre',
     to: '/sobre',
-    icon: 'lucide:book-open'
+    icon: 'fa7-solid:book-open'
   },
   {
     label: 'Serviços',
     to: '/servicos',
-    icon: 'lucide:cog'
+    icon: 'fa7-solid:cog'
   },
   {
     label: 'Contato',
     to: '/contato',
-    icon: 'lucide:notebook-tabs'
+    icon: 'fa7-solid:contact-book'
   }
 ])
 

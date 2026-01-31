@@ -4,8 +4,8 @@ import FuturisticBackground from '~/components/public/FuturisticBackground.vue'
 import AppEmbeddedMap from '~/components/public/AppEmbeddedMap.vue'
 import AppCarousel from '~/components/public/AppCarousel.vue'
 import ClientsMarquee from '~/components/shared/ClientsMarquee.vue'
-import { logosComercial, logosSaude } from '~/data/logos'
-import { testimonials } from '~/data/testimonials'
+import { logosComercial, logosSaude } from '~/data/logo'
+import { testimonials } from '~/data/testimonial'
 import { sliderItems } from '~/data/slider'
 import AppIcon from '~/components/shared/AppIcon.vue'
 
@@ -21,30 +21,37 @@ const features = {
     {
       title: 'Telefonia Corporativa',
       description: 'Ideal para empresas que querem modernizar atendimento interno e externo. Reduz custos de telefonia física. Integra com CRM e mobilidade.',
-      icon: 'lucide:phone-call'
+      icon: 'mdi:account-tie-voice-outline'
     },
     {
       title: 'Atendimento automatizado',
       description: 'A URA inteligente reduz tempo de espera e direciona ligações com precisão. Suporte à jornada do cliente.',
-      icon: 'lucide:speech'
+      icon: 'mdi:head-dots-horizontal-outline'
     },
     {
       title: 'Call Center',
       description: 'Utilizamos plataformas modernas e de alto desempenho para garantir estabilidade, escalabilidade e integração eficiente, atendendo desde operações de call center até empresas e instituições de diversos portes e segmentos.',
-      icon: 'lucide:headset'
+      icon: 'mdi:headset'
     },
     {
       title: 'Infraestrutura e Redes Estruturadas',
       description: 'Projetos feitos sob medida com foco em desempenho e segurança. Cuidados com a certificação dos pontos de rede.',
-      icon: 'lucide:audio-lines'
+      icon: 'mdi:console-network-outline'
     },
     {
       title: 'Ouvidoria',
       description: 'A ouvidoria é um canal institucional estratégico que promove a escuta qualificada, fortalece a transparência e contribui para a melhoria contínua dos serviços, assegurando o diálogo ético e respeitoso entre a organização e seus públicos.',
-      icon: 'lucide:network'
+      icon: 'mdi:ear-hearing'
     }
   ]
 }
+
+const comuniq = [
+  { description: 'Comunicação unificada em nuvem' },
+  { description: 'Atendimento mais rápido e organizado' },
+  { description: 'Mobilidade para equipes presenciais e remotas' },
+  { description: 'Integração com sistemas e processos da empresa' },
+]
 
 useHead({ title: 'Home' })
 </script>
@@ -93,17 +100,15 @@ useHead({ title: 'Home' })
               O que o ComuniQ entrega:
             </p>
             <ul class="text-left text-sm sm:text-md font-light tracking-widest text-blue-200 font-mono mt-6">
-              <li class="py-3 border-b border-b-[rgba(255,255,255,.4)] border-t border-t-[rgba(255,255,255,.4)]">
-                <UIcon name="lucide:circle-check-big" class="pl-12 mr-6" /> Comunicação unificada em nuvem
-              </li>
-              <li class="py-3 border-b border-b-[rgba(255,255,255,.4)]">
-                <UIcon name="lucide:circle-check-big" class="pl-12 mr-6" /> Atendimento mais rápido e organizado
-              </li>
-              <li class="py-3 border-b border-b-[rgba(255,255,255,.4)]">
-                <UIcon name="lucide:circle-check-big" class="pl-12 mr-6" /> Mobilidade para equipes presenciais e remotas
-              </li>
-              <li class="py-3 border-b border-b-[rgba(255,255,255,.4)]">
-                <UIcon name="lucide:circle-check-big" class="pl-12 mr-6" /> Integração com sistemas e processos da empresa
+              <li
+                v-for="item in comuniq"
+                :key="item.description"
+                class="py-3 border-b border-b-[rgba(255,255,255,.4)] border-t border-t-[rgba(255,255,255,.4)]"
+              >
+                <UIcon
+                  name="mdi:checkbox-marked-circle-outline"
+                  class="h-6 w-6 pl-0 sm:pl-12 mr-0 sm:mr-6" style="transform: translateY(5px)"
+                /> {{ item.description }}
               </li>
             </ul>
             <UButton

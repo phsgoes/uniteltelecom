@@ -2,8 +2,8 @@
 import CounterStats from '~/components/public/CounterStats.vue'
 import AppIcon from '~/components/shared/AppIcon.vue'
 import ClientsMarquee from '~/components/shared/ClientsMarquee.vue'
-import { logosComercial, logosSaude } from '~/data/logos'
-import { testimonials } from '~/data/testimonials'
+import { logosComercial, logosSaude } from '~/data/logo'
+import { testimonials } from '~/data/testimonial'
 
 const aboutUs = {
   firstTitle: 'Nossa história',
