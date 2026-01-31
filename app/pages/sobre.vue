@@ -14,17 +14,20 @@ const aboutUs = {
     {
       title: 'Missão',
       description: 'Conectar empresas e instituições por meio de soluções de telecomunicações confiáveis, garantindo comunicação contínua e eficiente.',
-      icon: 'unitel:target'
+      // icon: 'unitel:target'
+      icon: 'fa7-solid:bullseye'
     },
     {
       title: 'Visão',
       description: 'Ser reconhecida como referência em telecomunicações pela confiança, inovação e qualidade das soluções que entregamos.',
-      icon: 'unitel:eye'
+      // icon: 'unitel:eye'
+      icon: 'fa7-solid:eye'
     },
     {
       title: 'Valores',
       description: 'Confiança nas relações e nas soluções, Compromisso com o cliente,	Inovação contínua, Responsabilidade e ética',
-      icon: 'unitel:award'
+      // icon: 'unitel:award'
+      icon: 'fa7-solid:award'
     }
   ]
 }

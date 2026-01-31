@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppEmbeddedMap from '~/components/public/AppEmbeddedMap.vue'
 import AppSocialLink from '~/components/public/AppSocialLink.vue'
+import AppIcon from '~/components/shared/AppIcon.vue'
 import { contacts, socials } from '~/data/contact'
 useHead({ title: 'Contato' })
 </script>
@@ -18,6 +19,10 @@ useHead({ title: 'Contato' })
           v-bind="item"
           spotlight
         >
+          <template #leading>
+            <AppIcon :icon="item.icon" class="w-5 h-5 text-primary dark:text-gray-50" />
+          </template>
+
           <UColorModeImage
             v-if="item.image"
             :light="`${item.image.path}-light.svg`"
