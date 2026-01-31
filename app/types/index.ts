@@ -3,6 +3,7 @@ import type { Testimonial } from './interfaces/Testimonial'
 import type { SliderItem } from './interfaces/SliderItem'
 import type { FooterItem } from './interfaces/FooterItem'
 import type { Feature } from './interfaces/Feature'
+import type { Portfolio } from './interfaces/Portfolio'
 import type { ContactItem, SocialItem } from './interfaces/Contact'
 
 export type {
@@ -10,7 +11,8 @@ export type {
   Testimonial,
   SliderItem,
   FooterItem,
+  Portfolio,
+  Feature,
   ContactItem,
   SocialItem,
-  Feature,
 }

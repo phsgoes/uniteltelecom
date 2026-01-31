@@ -21,6 +21,7 @@ const hydrated = ref(false)
 const items = ref<NavigationMenuItem[]>([
   { label: 'Sobre', to: '/sobre' },
   { label: 'Serviços', to: '/servicos' },
+  { label: 'Portfólio', to: '/portfolio' },
   { label: 'Contato', to: '/contato' }
 ])
 
@@ -39,6 +40,11 @@ const mobileItems = ref<MenuItem[]>([
     label: 'Serviços',
     to: '/servicos',
     icon: 'fa7-solid:cog'
+  },
+  {
+    label: 'Portfólio',
+    to: '/portfolio',
+    icon: 'fa7-solid:folder-open'
   },
   {
     label: 'Contato',

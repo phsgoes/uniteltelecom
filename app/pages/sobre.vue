@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import CounterStats from '~/components/public/CounterStats.vue'
+import AppCounterStats from '~/components/public/AppCounterStats.vue'
 import AppIcon from '~/components/shared/AppIcon.vue'
 import ClientsMarquee from '~/components/shared/ClientsMarquee.vue'
 import { logosComercial, logosSaude } from '~/data/logo'
@@ -38,9 +38,9 @@ useHead({ title: 'Sobre' })
       <template #header>
         <UContainer>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted text-center mb-16">{{ aboutUs.firstTitle }}</h2>
-          <p class="text-base sm:text-lg text-medium mb-16">{{ aboutUs.firstDescription }}</p>
+          <p class="text-base text-center sm:text-lg text-medium mb-16">{{ aboutUs.firstDescription }}</p>
           <h3 class="text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted text-center mb-16">{{ aboutUs.secondTitle }}</h3>
-          <p class="text-base sm:text-lg text-medium mb-16">{{ aboutUs.secondDescription }}</p>
+          <p class="text-base text-center sm:text-lg text-medium mb-16">{{ aboutUs.secondDescription }}</p>
         </UContainer>
       </template>
       <UContainer>
@@ -100,7 +100,7 @@ useHead({ title: 'Sobre' })
     </UPageSection>
 
     <UPageSection>
-      <CounterStats />
+      <AppCounterStats />
     </UPageSection>
 
     <UPageSection

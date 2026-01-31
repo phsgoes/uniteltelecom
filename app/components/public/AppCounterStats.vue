@@ -49,16 +49,12 @@ onMounted(() => {
 <template>
   <section
     ref="container"
-    class="bg-gray-100 dark:bg-gray-900 py-12"
+    class="bg-gray-100 dark:bg-transparent py-0"
   >
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-24 md:gap-6 text-center">
       <div v-for="(stat, index) in stats" :key="stat.label">
-        <p class="text-4xl font-bold text-red-600">
-          {{ counters[index] }}
-        </p>
-        <p class="mt-2 text-sm uppercase tracking-wide">
-          {{ stat.label }}
-        </p>
+        <p class="text-4xl font-bold text-red-600">{{ counters[index] }}</p>
+        <p class="mt-2 text-sm uppercase tracking-wide">{{ stat.label }}</p>
       </div>
     </div>
   </section>

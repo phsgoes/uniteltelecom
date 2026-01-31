@@ -11,7 +11,7 @@ const contacts: ContactItem[] = [
     icon: 'mdi:phone',
     to: 'tel:+557721013300',
     image: {
-      path: `${baseURL}images/telefone`,
+      path: `${baseURL}images/contato/telefone`,
       width: 363,
       height: 206
     },
@@ -23,7 +23,7 @@ const contacts: ContactItem[] = [
     icon: 'mdi:email-outline',
     to: 'mailto:atendimento@uniteltelecom.com.br',
     image: {
-      path: `${baseURL}images/atendimento`,
+      path: `${baseURL}images/contato/atendimento`,
       width: 363,
       height: 203
     },
@@ -35,7 +35,7 @@ const contacts: ContactItem[] = [
     icon: 'fa7-brands:whatsapp',
     to: `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
     image: {
-      path: `${baseURL}images/whatsapp`,
+      path: `${baseURL}images/contato/whatsapp`,
       width: 117,
       height: 130
     },
@@ -47,7 +47,7 @@ const contacts: ContactItem[] = [
     icon: 'mdi:email-outline',
     to: 'mailto:comercial@uniteltelecom.com.br',
     image: {
-      path: `${baseURL}images/comercial`,
+      path: `${baseURL}images/contato/comercial`,
       width: 363,
       height: 170
     },

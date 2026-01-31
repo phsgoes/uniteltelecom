@@ -1,4 +1,4 @@
-export interface FeatureItem {
+interface FeatureItem {
   title: string
   description: string
   icon: string
