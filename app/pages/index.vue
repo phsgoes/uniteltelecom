@@ -7,44 +7,8 @@ import ClientsMarquee from '~/components/shared/ClientsMarquee.vue'
 import { logosComercial, logosSaude } from '~/data/logo'
 import { testimonials } from '~/data/testimonial'
 import { sliderItems } from '~/data/slider'
+import { features } from '~/data/feature'
 import AppIcon from '~/components/shared/AppIcon.vue'
-
-const features = {
-  title: 'Soluções inteligentes em telecomunicações para empresas que não podem parar',
-  description: 'A Unitel ajuda sua empresa a reduzir falhas na comunicação, evitar interrupções operacionais, ter controle e rastreabilidade no atendimento, atender exigências legais e institucionais, além de proteger a reputação da marca',
-  items: [
-    {
-      title: 'ComuniQ',
-      description: 'Plataforma de comunicação corporativa da Unitel, desenvolvida para integrar telefonia, atendimento, mobilidade e gestão em um único ambiente inteligente, seguro e escalável.',
-      icon: 'unitel:comuniq'
-    },
-    {
-      title: 'Telefonia Corporativa',
-      description: 'Ideal para empresas que querem modernizar atendimento interno e externo. Reduz custos de telefonia física. Integra com CRM e mobilidade.',
-      icon: 'mdi:account-tie-voice-outline'
-    },
-    {
-      title: 'Atendimento automatizado',
-      description: 'A URA inteligente reduz tempo de espera e direciona ligações com precisão. Suporte à jornada do cliente.',
-      icon: 'mdi:head-dots-horizontal-outline'
-    },
-    {
-      title: 'Call Center',
-      description: 'Utilizamos plataformas modernas e de alto desempenho para garantir estabilidade, escalabilidade e integração eficiente, atendendo desde operações de call center até empresas e instituições de diversos portes e segmentos.',
-      icon: 'mdi:headset'
-    },
-    {
-      title: 'Infraestrutura e Redes Estruturadas',
-      description: 'Projetos feitos sob medida com foco em desempenho e segurança. Cuidados com a certificação dos pontos de rede.',
-      icon: 'mdi:console-network-outline'
-    },
-    {
-      title: 'Ouvidoria',
-      description: 'A ouvidoria é um canal institucional estratégico que promove a escuta qualificada, fortalece a transparência e contribui para a melhoria contínua dos serviços, assegurando o diálogo ético e respeitoso entre a organização e seus públicos.',
-      icon: 'mdi:ear-hearing'
-    }
-  ]
-}
 
 const comuniq = [
   { description: 'Comunicação unificada em nuvem' },
@@ -106,7 +70,7 @@ useHead({ title: 'Home' })
                 class="py-3 border-b border-b-[rgba(255,255,255,.4)] border-t border-t-[rgba(255,255,255,.4)]"
               >
                 <UIcon
-                  name="mdi:checkbox-marked-circle-outline"
+                  name="lucide:circle-check-big"
                   class="h-6 w-6 pl-0 sm:pl-12 mr-0 sm:mr-6" style="transform: translateY(5px)"
                 /> {{ item.description }}
               </li>
