@@ -1,4 +1,4 @@
-import { reactive } from 'vue'
+import { reactive, markRaw } from 'vue'
 import type { Component } from 'vue'
 
 export interface IconRegistry {
@@ -18,7 +18,11 @@ export function registerIconLibrary(
   if (!customIconRegistry[prefix]) {
     customIconRegistry[prefix] = {}
   }
-  Object.assign(customIconRegistry[prefix], icons)
+
+  for (const [name, component] of Object.entries(icons)) {
+    // 🔥 ESSENCIAL: impede o Vue de tornar o componente reativo
+    customIconRegistry[prefix][name] = markRaw(component)
+  }
 }
 
 export function useIconRegistry() {

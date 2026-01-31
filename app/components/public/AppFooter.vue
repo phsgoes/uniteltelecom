@@ -15,22 +15,22 @@ const columns: FooterColumn<FooterItem>[] = [
       { 
         label: 'Home',
         to: '/',
-        icon: 'lucide:home'
+        icon: 'fa7-solid:home'
       },
       { 
         label: 'Sobre',
         to: '/sobre',
-        icon: 'lucide:book-open'
+        icon: 'fa7-solid:book-open'
       },
       { 
         label: 'Serviços',
         to: '/servicos',
-        icon: 'lucide:cog'
+        icon: 'fa7-solid:cog'
       },
       { 
         label: 'Contato',
         to: '/contato',
-        icon: 'lucide:notebook-tabs'
+        icon: 'fa7-solid:contact-book'
       }
     ]
   },
@@ -39,12 +39,12 @@ const columns: FooterColumn<FooterItem>[] = [
     children: [
       {
         label: 'Instagram',
-        icon: 'lucide:instagram',
+        icon: 'fa7-brands:instagram',
         to: 'https://www.instagram.com/uniteltelecom_/'
       },
       {
         label: 'LinkedIn',
-        icon: 'lucide:linkedin',
+        icon: 'fa7-brands:linkedin',
         to: 'https://www.linkedin.com/company/uniteltelecomvca'
       },
       {
@@ -58,18 +58,18 @@ const columns: FooterColumn<FooterItem>[] = [
     children: [
       {
         label: 'Praça Joaquim Correia, Centro, Vitória da Conquista',
-        icon: 'lucide:map-pin',
+        icon: 'fa7-solid:location-dot',
         to: 'https://www.google.com/maps/place/Unitel+Telecom/@-14.8491661,-40.8396598,17z/data=!3m1!4b1!4m6!3m5!1s0x7463a4b531fcd4d:0x9a8f24ad4398e324!8m2!3d-14.8491713!4d-40.8370849!16s%2Fg%2F1tdbwz27?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoASAFQAw%3D%3D',
         target: '_blank'
       },
       {
         label: '(77) 2101-3300',
-        icon: 'lucide:phone-call',
+        icon: 'fa7-solid:volume-control-phone',
         to: 'tel:+557721013300'
       },
       {
         label: 'atendimento@uniteltelecom.com.br',
-        icon: 'lucide:at-sign',
+        icon: 'fa7-solid:at',
         to: 'mailto:atendimento@uniteltelecom.com.br'
       }
     ]

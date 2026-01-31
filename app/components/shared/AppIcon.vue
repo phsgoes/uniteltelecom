@@ -39,16 +39,19 @@ const resolvedCustomIcon = computed<Component | null>(() => {
 </script>
 
 <template>
-  <component
-    v-if="resolvedCustomIcon"
-    :is="resolvedCustomIcon"
-    :size="size"
-    :color="color"
-  />
-  <UIcon
-    v-else
-    :name="icon"
-    :size="size"
-    :color="color"
-  />
+  <ClientOnly>
+    <component
+      v-if="resolvedCustomIcon"
+      :is="resolvedCustomIcon"
+      :size="size"
+      :color="color"
+    />
+
+    <UIcon
+      v-else
+      :name="icon"
+      :size="size"
+      :color="color"
+    />
+  </ClientOnly>
 </template>
