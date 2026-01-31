@@ -7,7 +7,7 @@ const contacts: ContactItem[] = [
   {
     title: 'Telefone',
     description: '+55 (77) 2101-3300',
-    icon: 'lucide:phone',
+    icon: 'mdi:phone',
     to: 'tel:+557721013300',
     image: {
       path: '/uniteltelecom/images/telefone',
@@ -19,7 +19,7 @@ const contacts: ContactItem[] = [
   {
     title: 'Atendimento Geral',
     description: 'atendimento@uniteltelecom.com.br',
-    icon: 'lucide:mail',
+    icon: 'mdi:email-outline',
     to: 'mailto:atendimento@uniteltelecom.com.br',
     image: {
       path: '/uniteltelecom/images/atendimento',
@@ -43,7 +43,7 @@ const contacts: ContactItem[] = [
   {
     title: 'Departamento comercial',
     description: 'comercial@uniteltelecom.com.br',
-    icon: 'lucide:mail',
+    icon: 'mdi:email-outline',
     to: 'mailto:comercial@uniteltelecom.com.br',
     image: {
       path: '/uniteltelecom/images/comercial',
