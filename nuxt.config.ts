@@ -1,7 +1,7 @@
 const baseURL = '/uniteltelecom/'
 const icons = {
   dynamic: false,
-  collections: ['mdi', 'lucide', 'fa7-brands']
+  // collections: ['mdi', 'lucide', 'fa7-brands']
 }
 
 export default defineNuxtConfig({
