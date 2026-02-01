@@ -3,7 +3,6 @@ import LogoComuniq from '~/components/shared/LogoComuniq.vue'
 import FuturisticBackground from '~/components/public/FuturisticBackground.vue'
 import AppEmbeddedMap from '~/components/public/AppEmbeddedMap.vue'
 import AppCarousel from '~/components/public/AppCarousel.vue'
-import ClientsMarquee from '~/components/shared/ClientsMarquee.vue'
 import { logosComercial, logosSaude } from '~/data/logo'
 import { testimonials } from '~/data/testimonial'
 import { sliderItems } from '~/data/slider'
@@ -121,28 +120,73 @@ useHead({ title: 'Home' })
       title="Instituições que escolheram nossa expertise"
       description="Empresas da área da saúde que confiam no nosso trabalho e constroem resultados conosco"
     >
-      <ClientsMarquee
-        :logos="logosSaude"
-        direction="reverse"
-        :duration="80"
-        :gap="32"
-        :rows="1"
+      <UMarquee
+        :ui="{ root: '[--duration:80s]' }"
         pause-on-hover
-      />
+        overlay
+      >
+        <UTooltip
+          v-for="logo in logosSaude"
+          :key="logo.name"
+          :text="logo.name"
+        >
+          <img
+            :src="logo.src"
+            :alt="logo.name"
+            loading="lazy"
+            class="
+              h-10
+              sm:h-12
+              md:h-14
+              w-auto
+              grayscale
+              opacity-80
+              transition-all
+              duration-300
+              ease-in-out
+              hover:grayscale-0
+              hover:opacity-100
+            "
+          />
+        </UTooltip>
+      </UMarquee>
     </UPageSection>
 
     <UPageSection
       title="Quem confia no nosso trabalho"
       description="Instituições de diferentes segmentos que fazem parte da nossa trajetória."
     >
-      <ClientsMarquee
-        :logos="logosComercial"
-        direction="normal"
-        :duration="70"
-        :gap="32"
-        :rows="1"
+      <UMarquee
+        :ui="{ root: '[--duration:60s]' }"
         pause-on-hover
-      />
+        reverse
+        overlay
+      >
+        <UTooltip
+          v-for="logo in logosComercial"
+          :key="logo.name"
+          :text="logo.name"
+        >
+          <img
+            :src="logo.src"
+            :alt="logo.name"
+            loading="lazy"
+            class="
+              h-10
+              sm:h-12
+              md:h-14
+              w-auto
+              grayscale
+              opacity-80
+              transition-all
+              duration-300
+              ease-in-out
+              hover:grayscale-0
+              hover:opacity-100
+            "
+          />
+        </UTooltip>
+      </UMarquee>
     </UPageSection>
   </NuxtLayout>
 </template>

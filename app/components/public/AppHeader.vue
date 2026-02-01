@@ -3,17 +3,7 @@ import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import type { NavigationMenuItem } from '@nuxt/ui'
 import LogoUnitel from '~/components/shared/LogoUnitel.vue'
-
-/**
- * IMPORTANT:
- * `to` is strictly a string
- * This avoids RouteLocationRaw issues entirely
- */
-interface MenuItem {
-  label: string
-  to: string
-  icon: string
-}
+import { navigationItems } from '~/data/navigation'
 
 const route = useRoute()
 const hydrated = ref(false)
@@ -23,34 +13,6 @@ const items = ref<NavigationMenuItem[]>([
   { label: 'Serviços', to: '/servicos' },
   { label: 'Portfólio', to: '/portfolio' },
   { label: 'Contato', to: '/contato' }
-])
-
-const mobileItems = ref<MenuItem[]>([
-  {
-    label: 'Home',
-    to: '/',
-    icon: 'fa7-solid:home'
-  },
-  {
-    label: 'Sobre',
-    to: '/sobre',
-    icon: 'fa7-solid:book-open'
-  },
-  {
-    label: 'Serviços',
-    to: '/servicos',
-    icon: 'fa7-solid:cog'
-  },
-  {
-    label: 'Portfólio',
-    to: '/portfolio',
-    icon: 'fa7-solid:folder-open'
-  },
-  {
-    label: 'Contato',
-    to: '/contato',
-    icon: 'fa7-solid:contact-book'
-  }
 ])
 
 function isActive(path: string): boolean {
@@ -85,7 +47,7 @@ onMounted(() => {
       <nav class="h-full w-full">
         <ul class="flex h-[80vh] flex-col justify-evenly gap-0">
           <li
-            v-for="item in mobileItems"
+            v-for="item in navigationItems"
             :key="item.label"
             class="h-full"
           >

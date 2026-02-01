@@ -52,6 +52,7 @@ useSeoMeta({
 -->
 <template>
   <AppHeader />
+  <GlobalCommandMenu />
   <UMain>
     <slot />
   </UMain>
