@@ -1,4 +1,5 @@
 import type { Testimonial } from '~/types'
+import { baseURL } from './_'
 
 const testimonials: Testimonial = {
   title: 'Não acredite apenas na nossa palavra. Acredite na deles!',
@@ -11,7 +12,7 @@ const testimonials: Testimonial = {
         description: 'Diretora executiva',
         target: '_blank',
         avatar: {
-          src: '/uniteltelecom/images/testimonials/testimonial-1.avif'
+          src: `${baseURL}images/testimonials/testimonial-1.avif`
         }
       }
     },
@@ -22,7 +23,7 @@ const testimonials: Testimonial = {
         description: 'Líder de desenvolvimento',
         target: '_blank',
         avatar: {
-          src: '/uniteltelecom/images/testimonials/testimonial-2.avif'
+          src: `${baseURL}images/testimonials/testimonial-2.avif`
         }
       }
     },
@@ -33,7 +34,7 @@ const testimonials: Testimonial = {
         description: 'CEO das Indústrias FLANCO',
         target: '_blank',
         avatar: {
-          src: '/uniteltelecom/images/testimonials/testimonial-3.avif'
+          src: `${baseURL}images/testimonials/testimonial-3.avif`
         }
       }
     }
