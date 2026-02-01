@@ -27,6 +27,11 @@ const columns: FooterColumn<FooterItem>[] = [
         to: '/servicos',
         icon: 'fa7-solid:cog'
       },
+      {
+        label: 'Portfólio',
+        to: '/portfolio',
+        icon: 'fa7-solid:folder-open'
+      },
       { 
         label: 'Contato',
         to: '/contato',
