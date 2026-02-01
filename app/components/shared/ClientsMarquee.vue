@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue'
-import type { ClientLogo } from '~/types';
+import type { ClientLogo } from '~/types'
 
 type MarqueeDirection = 'normal' | 'reverse'
 
@@ -8,23 +8,29 @@ const props = withDefaults(
   defineProps<{
     logos: ClientLogo[]
     direction?: MarqueeDirection
-    duration?: number
+    speed?: number // px por segundo
     gap?: number
     rows?: number
     pauseOnHover?: boolean
   }>(),
   {
     direction: 'normal',
-    duration: 80,
+    speed: 60,
     gap: 24,
     rows: 1,
     pauseOnHover: true
   }
 )
 
+/**
+ * Garantir pelo menos 1 linha
+ */
 const safeRows = Math.max(1, props.rows)
 
-const rowsData = computed(() => {
+/**
+ * Distribuir logos entre as linhas (TypeScript-safe)
+ */
+const rowsData = computed<ClientLogo[][]>(() => {
   const result: ClientLogo[][] = Array.from(
     { length: safeRows },
     () => []
@@ -32,23 +38,31 @@ const rowsData = computed(() => {
 
   props.logos.forEach((logo, index) => {
     const rowIndex = index % safeRows
-    result[rowIndex]?.push(logo)
+    result[rowIndex] ??= []
+    result[rowIndex].push(logo)
   })
 
   return result
 })
 
 /**
- * Duplicate for seamless scroll
+ * Duplicar para scroll infinito
  */
-const duplicatedRows = computed(() => rowsData.value.map(row => [...row, ...row]))
+const duplicatedRows = computed(() =>
+  rowsData.value.map(row => [...row, ...row])
+)
 
 /**
- * Dynamic width calculation
+ * Refs para os tracks
  */
 const tracks = ref<HTMLUListElement[]>([])
 
+/**
+ * Styles dinâmicos por linha
+ */
 const trackStyles = ref<Record<number, Record<string, string>>>({})
+
+let resizeTimeout: number | undefined
 
 const calculateWidths = async () => {
   await nextTick()
@@ -57,70 +71,65 @@ const calculateWidths = async () => {
     if (!track) return
 
     const halfWidth = track.scrollWidth / 2
+    const duration = halfWidth / props.speed
 
     trackStyles.value[index] = {
       '--marquee-distance': `-${halfWidth}px`,
-      '--marquee-duration': `${props.duration}s`,
-      '--marquee-direction': index % 2 === 0 ? props.direction : props.direction === 'normal' ? 'reverse' : 'normal',
+      '--marquee-duration': `${duration}s`,
+      '--marquee-direction':
+        index % 2 === 0
+          ? props.direction
+          : props.direction === 'normal'
+          ? 'reverse'
+          : 'normal',
       '--marquee-gap': `${props.gap}px`
     }
   })
 }
 
+const recalcDebounced = () => {
+  clearTimeout(resizeTimeout)
+  resizeTimeout = window.setTimeout(calculateWidths, 100)
+}
+
 onMounted(() => {
   if (!import.meta.client) return
   calculateWidths()
-  window.addEventListener('resize', calculateWidths)
+  window.addEventListener('resize', recalcDebounced)
 })
 
 onBeforeUnmount(() => {
   if (!import.meta.client) return
-  window.removeEventListener('resize', calculateWidths)
+  window.removeEventListener('resize', recalcDebounced)
 })
-
 </script>
 
 <template>
   <section class="relative w-full overflow-hidden py-6">
     <!-- Header -->
-    <!-- <header class="mx-auto mb-8 max-w-5xl text-center px-4"> -->
     <header class="mx-auto mb-8 max-w-5xl px-8 text-left">
       <h2
         v-if="$slots.title"
-        class="
-          text-balance
-          text-xl
-          sm:text-2xl
-          md:text-3xl
-          font-medium
-          tracking-tight
-          text-gray-900
-          dark:text-gray-100
-        "
+        class="text-balance text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-gray-900 dark:text-gray-100"
       >
         <slot name="title" />
       </h2>
 
       <p
         v-if="$slots.subtitle"
-        class="
-          mt-3
-          text-pretty
-          text-base
-          sm:text-md
-          md:text-lg
-          leading-relaxed
-          text-gray-600
-          dark:text-gray-400
-        "
+        class="mt-3 text-pretty text-base sm:text-md md:text-lg leading-relaxed text-gray-600 dark:text-gray-400"
       >
         <slot name="subtitle" />
       </p>
     </header>
 
     <!-- Edge fade -->
-    <div class="pointer-events-none absolute inset-y-0 left-0 w-12 bg-linear-to-r from-white dark:from-gray-900 to-transparent z-2" />
-    <div class="pointer-events-none absolute inset-y-0 right-0 w-12 bg-linear-to-l from-white dark:from-gray-900 to-transparent z-2" />
+    <div
+      class="pointer-events-none absolute inset-y-0 left-0 w-12 bg-linear-to-r from-white dark:from-gray-900 to-transparent z-2"
+    />
+    <div
+      class="pointer-events-none absolute inset-y-0 right-0 w-12 bg-linear-to-l from-white dark:from-gray-900 to-transparent z-2"
+    />
 
     <div class="marquee">
       <ul
@@ -141,6 +150,7 @@ onBeforeUnmount(() => {
               :src="logo.src"
               :alt="logo.name"
               loading="lazy"
+              @load="recalcDebounced"
               class="
                 h-10
                 sm:h-12
@@ -178,8 +188,10 @@ onBeforeUnmount(() => {
   animation-name: marquee-scroll;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-duration: var(--marquee-duration, 80s);
+  animation-duration: var(--marquee-duration);
   animation-direction: var(--marquee-direction, normal);
+
+  will-change: transform;
 }
 
 .pause-on-hover:hover {
