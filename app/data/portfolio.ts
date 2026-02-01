@@ -43,6 +43,29 @@ const portfolios: Portfolio[] = [
       }
     ],
     image: `${baseURL}images/portfolio/lojas-maia-magazine-luiza.avif`
+  },
+  {
+    title: 'Redução de custos de telefonia da PMVC',
+    description: 'Em 22 de fevereiro de 2013, representantes do Prefeitura de Vitória da Conquista reuniram-se com empresários para conhecer o novo sistema de telefonia que seria implantado nos órgãos dos públicos municipais. Durante o encontro, realizado no Gabinete Civil, foram apresentadas as características e as vantagens da nova ferramenta que seria disponibilizada aos servidores ainda em 2013.',
+    orientation: 'horizontal',
+    features: [
+      {
+        name: 'Modernização',
+        description: 'Modernização do sistema de telefonia digital IP e inteligação de 11 secretarias, prédios públicos e postos de saúde.',
+        icon: 'lucide:circle-check-big'
+      },
+      {
+        name: 'Redução de custos',
+        description: 'Redução de custos telefônicos e uma economia de mais de 2 milhões de reais anuais aos cofres públicos da cidade.',
+        icon: 'lucide:circle-check-big'
+      },
+      {
+        name: 'Gestão',
+        description: 'Disponibilização de ferramentas de controle de custos mais eficientes seguindo o princípio de uma gestão austera e transparente.',
+        icon: 'lucide:circle-check-big'
+      }
+    ],
+    image: `${baseURL}images/portfolio/pmvc.avif`
   }
 ]
 
